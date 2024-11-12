@@ -7,3 +7,4 @@ CREATE TABLE tasks(
     createdAt timestamp DEFAULT current_timestamp,
     dueDate timestamp NOT NULL
 );
+

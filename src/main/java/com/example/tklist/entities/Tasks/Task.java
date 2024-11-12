@@ -1,4 +1,4 @@
-package com.example.tklist.entities;
+package com.example.tklist.entities.Tasks;
 
 import jakarta.persistence.*;
 

@@ -1,7 +1,7 @@
 package com.example.tklist.DTO;
 
-import com.example.tklist.entities.Task;
-import com.example.tklist.entities.TaskPriority;
+import com.example.tklist.entities.Tasks.Task;
+import com.example.tklist.entities.Tasks.TaskPriority;
 
 public class TaskDTO {
     private Long id;
