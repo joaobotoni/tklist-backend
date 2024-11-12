@@ -1,5 +1,29 @@
-## Insert
+## SQL
 ```sql
+
+CREATE TABLE tasks (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(100) NOT NULL,
+    assignee VARCHAR(100) NOT NULL UNIQUE,
+    createdAt TIMESTAMP DEFAULT NOW(),
+    description VARCHAR(200) NOT NULL,
+    priority SMALLINT CHECK (priority IN (0, 1, 2)) NOT NULL,
+    dueDate TIMESTAMP NOT NULL
+);
+
+CREATE TABLE task_list (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE belong (
+    task_id INT NOT NULL,
+    list_id INT NOT NULL,
+    position_task INT NOT NULL,
+    FOREIGN KEY (task_id) REFERENCES tasks(id) ON DELETE CASCADE,
+    FOREIGN KEY (list_id) REFERENCES task_list(id) ON DELETE CASCADE
+);
+
 INSERT INTO tasks (title, assignee, created_at, description, priority, due_date) VALUES 
   ('Comprar leite', 'João', NOW(), 'Comprar leite no supermercado', 0, '2024-11-15 09:00:00'),
   ('Enviar relatório', 'Maria', NOW(), 'Enviar relatório de vendas para a diretoria', 1, '2024-11-14 17:00:00'),
