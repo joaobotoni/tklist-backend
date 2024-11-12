@@ -9,5 +9,4 @@ public class TklistApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(TklistApplication.class, args);
 	}
-
 }
