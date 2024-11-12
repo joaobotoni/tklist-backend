@@ -1,4 +1,4 @@
-## SQL
+## Create Table
 ```sql
 
 CREATE TABLE tasks (
@@ -23,7 +23,10 @@ CREATE TABLE belong (
     FOREIGN KEY (task_id) REFERENCES tasks(id) ON DELETE CASCADE,
     FOREIGN KEY (list_id) REFERENCES task_list(id) ON DELETE CASCADE
 );
+```
+### Insert
 
+```sql
 INSERT INTO tasks (title, assignee, created_at, description, priority, due_date) VALUES 
   ('Comprar leite', 'João', NOW(), 'Comprar leite no supermercado', 0, '2024-11-15 09:00:00'),
   ('Enviar relatório', 'Maria', NOW(), 'Enviar relatório de vendas para a diretoria', 1, '2024-11-14 17:00:00'),
