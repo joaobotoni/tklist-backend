@@ -1,4 +1,4 @@
-## Create Table
+## Create Table with Flyway
 ```sql
 
 CREATE TABLE tasks (
@@ -24,7 +24,7 @@ CREATE TABLE belong (
     FOREIGN KEY (list_id) REFERENCES task_list(id) ON DELETE CASCADE
 );
 ```
-### Insert
+### Inserting data into Postgres
 
 ```sql
 INSERT INTO tasks (title, assignee, created_at, description, priority, due_date) VALUES 
