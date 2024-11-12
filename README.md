@@ -1,6 +1,6 @@
--- Inserindo tarefas na tabela tasks
-INSERT INTO tasks (title, assignee, created_at, description, priority, due_date)
-VALUES 
+## Insert
+```sql
+INSERT INTO tasks (title, assignee, created_at, description, priority, due_date) VALUES 
   ('Comprar leite', 'João', NOW(), 'Comprar leite no supermercado', 0, '2024-11-15 09:00:00'),
   ('Enviar relatório', 'Maria', NOW(), 'Enviar relatório de vendas para a diretoria', 1, '2024-11-14 17:00:00'),
   ('Reunião com cliente', 'Carlos', NOW(), 'Reunião para discutir novos projetos', 2, '2024-11-13 10:00:00'),
@@ -13,15 +13,13 @@ VALUES
   ('Atualizar currículo', 'João', NOW(), 'Atualizar currículo para candidatura em novas vagas', 1, '2024-11-22 10:00:00');
 
 -- Inserindo listas na tabela task_list
-INSERT INTO task_list (name) 
-VALUES 
+INSERT INTO task_list (name) VALUES 
   ('Lista de Tarefas Pessoais'),
   ('Lista de Tarefas Profissionais'),
   ('Lista de Tarefas Urgentes');
 
 -- Associando tarefas a listas na tabela belong
-INSERT INTO belong (task_id, list_id, position_task) 
-VALUES 
+INSERT INTO belong (task_id, list_id, position_task) VALUES 
   (1, 1, 1),
   (2, 2, 1),
   (3, 3, 1),
@@ -32,3 +30,4 @@ VALUES
   (8, 2, 4),
   (9, 3, 2),
   (10, 1, 4);
+```
