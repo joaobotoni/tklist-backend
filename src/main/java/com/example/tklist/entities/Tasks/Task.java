@@ -3,6 +3,7 @@ package com.example.tklist.entities.Tasks;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -18,6 +19,15 @@ public class Task {
     private TaskPriority priority;
     private LocalDateTime createdAt;
     private LocalDateTime dueDate;
+
+    @ManyToMany
+    @JoinTable(
+            name = "belong",
+            joinColumns = @JoinColumn(name = "task_id"),
+            inverseJoinColumns = @JoinColumn(name = "list_id")
+    )
+
+    private List<TaskList> taskLists;
 
     public Task(){}
 

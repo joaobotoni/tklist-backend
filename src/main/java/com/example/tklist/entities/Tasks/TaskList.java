@@ -2,6 +2,7 @@ package com.example.tklist.entities.Tasks;
 
 import jakarta.persistence.*;
 
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -12,6 +13,9 @@ public class TaskList {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
+
+    @ManyToMany(mappedBy = "taskLists")
+    private List<Task> tasks;
 
     public TaskList(){}
 

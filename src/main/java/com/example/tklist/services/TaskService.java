@@ -27,4 +27,11 @@ public class TaskService {
         return result.stream().map(TaskDTO::new).toList();
     }
 
+    @Transactional(readOnly = true)
+    public List<TaskDTO> findAllByList(Long id){
+        var result = repository.findAllByTaskListsId(id);
+        return result.stream().map(TaskDTO::new).toList();
+    }
+
+
 }
