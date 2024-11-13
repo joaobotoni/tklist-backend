@@ -1,16 +1,16 @@
 CREATE TABLE tasks (
-    id SERIAL PRIMARY KEY,
+    id BIGSERIAL PRIMARY KEY,
     title VARCHAR(100) NOT NULL,
-    assignee VARCHAR(100) NOT NULL UNIQUE,
-    createdAt TIMESTAMP DEFAULT NOW(),
+    assignee VARCHAR(100) NOT NULL,
+    createdAt TIMESTAMP NOT NULL,
     description VARCHAR(200) NOT NULL,
     priority SMALLINT CHECK (priority IN (0, 1, 2)) NOT NULL,
     dueDate TIMESTAMP NOT NULL
 );
 
 CREATE TABLE task_list (
-  id SERIAL PRIMARY KEY,
-  name VARCHAR(100) NOT NULL
+    id BIGSERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE belong (
