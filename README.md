@@ -2,7 +2,7 @@
 ```sql
 
 CREATE TABLE tasks (
-    id BIGSERIAL PRIMARY KEY,
+    id SERIAL PRIMARY KEY,  -- Aqui está o auto incremento
     title VARCHAR(100) NOT NULL,
     assignee VARCHAR(100) NOT NULL,
     createdAt TIMESTAMP NOT NULL,
@@ -12,7 +12,7 @@ CREATE TABLE tasks (
 );
 
 CREATE TABLE task_list (
-    id BIGSERIAL PRIMARY KEY,
+    id SERIAL PRIMARY KEY,  -- Auto incremento também
     name VARCHAR(100) NOT NULL
 );
 
