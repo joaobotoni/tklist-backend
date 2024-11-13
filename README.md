@@ -50,11 +50,23 @@ INSERT INTO belong (task_id, list_id, position_task) VALUES
   (1, 1, 1),
   (2, 2, 1),
   (3, 3, 1),
+
   (4, 1, 2),
   (5, 2, 2),
   (6, 2, 3),
   (7, 1, 3),
   (8, 2, 4),
+
   (9, 3, 2),
   (10, 1, 4);
 ```
+<img src="https://github.com/user-attachments/assets/765ed3de-2137-4036-a9e6-82e18985ac84"/>
+
+
+
+
+
+
+
+
+
