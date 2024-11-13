@@ -40,7 +40,9 @@ INSERT INTO tasks (title, assignee, createdAt, description, priority, dueDate) V
   ('Atualizar currículo', 'João', NOW(), 'Atualizar currículo para candidatura em novas vagas', 1, '2024-11-22 10:00:00');
 
 INSERT INTO task_list (name) VALUES 
-  ('Lista de Tarefas Faculdade');
+  ('Lista de Tarefas Pessoais'),
+  ('Lista de Tarefas Profissionais'),
+  ('Lista de Tarefas Urgentes');
 
 INSERT INTO belong (task_id, list_id, position_task) VALUES 
   (1, 1, 1),
