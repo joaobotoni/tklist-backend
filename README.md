@@ -2,7 +2,7 @@
 ```sql
 
 CREATE TABLE tasks (
-    id SERIAL PRIMARY KEY,  -- Aqui está o auto incremento
+    id SERIAL PRIMARY KEY,  
     title VARCHAR(100) NOT NULL,
     assignee VARCHAR(100) NOT NULL,
     createdAt TIMESTAMP NOT NULL,
@@ -27,7 +27,7 @@ CREATE TABLE belong (
 ### Inserting data into Postgres
 
 ```sql
-INSERT INTO tasks (title, assignee, createdAt, description, priority, dueDate) VALUES 
+INSERT INTO tasks (title, assignee, created_at, description, priority, due_date) VALUES 
   ('Comprar leite', 'João', NOW(), 'Comprar leite no supermercado', 0, '2024-11-15 09:00:00'),
   ('Enviar relatório', 'Maria', NOW(), 'Enviar relatório de vendas para a diretoria', 1, '2024-11-14 17:00:00'),
   ('Reunião com cliente', 'Carlos', NOW(), 'Reunião para discutir novos projetos', 2, '2024-11-13 10:00:00'),
