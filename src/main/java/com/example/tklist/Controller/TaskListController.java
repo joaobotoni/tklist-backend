@@ -1,13 +1,11 @@
 package com.example.tklist.Controller;
+import com.example.tklist.DTO.ReplacementDTO;
 import com.example.tklist.DTO.TaskListDTO;
 import com.example.tklist.entities.Tasks.TaskList;
 import com.example.tklist.services.TaskListService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 @RestController
@@ -31,4 +29,10 @@ public class TaskListController {
             return ResponseEntity.notFound().build();
         }
     }
+
+    @PostMapping(value = "/{id}/replacement")
+    public void move(@PathVariable Long id, @RequestBody ReplacementDTO body) {
+        service.move(id, body.getSourceIndex(), body.getDestinationIndex());
+    }
+
 }

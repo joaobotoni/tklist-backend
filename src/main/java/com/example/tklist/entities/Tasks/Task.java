@@ -1,7 +1,6 @@
 package com.example.tklist.entities.Tasks;
 
 import jakarta.persistence.*;
-
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
@@ -20,16 +19,16 @@ public class Task {
     private LocalDateTime createdAt;
     private LocalDateTime dueDate;
 
-    @ManyToMany
+    // Relacionamento Many-to-Many com a tabela task_list através da tabela de junção 'belong'
+    @ManyToMany(fetch = FetchType.EAGER) // Aqui estamos utilizando FetchType.EAGER para carregar as listas associadas
     @JoinTable(
             name = "belong",
             joinColumns = @JoinColumn(name = "task_id"),
             inverseJoinColumns = @JoinColumn(name = "list_id")
     )
-
     private List<TaskList> taskLists;
 
-    public Task(){}
+    public Task() {}
 
     public Task(Long id, String title, String assignee, String description, TaskPriority priority, LocalDateTime createdAt, LocalDateTime dueDate) {
         this.id = id;
@@ -40,6 +39,8 @@ public class Task {
         this.createdAt = createdAt;
         this.dueDate = dueDate;
     }
+
+    // Getters e setters
 
     public Long getId() {
         return id;
@@ -95,6 +96,14 @@ public class Task {
 
     public void setDueDate(LocalDateTime dueDate) {
         this.dueDate = dueDate;
+    }
+
+    public List<TaskList> getTaskLists() {
+        return taskLists;
+    }
+
+    public void setTaskLists(List<TaskList> taskLists) {
+        this.taskLists = taskLists;
     }
 
     @Override

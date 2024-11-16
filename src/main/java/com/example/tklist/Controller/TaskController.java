@@ -29,7 +29,7 @@ public class TaskController {
         return service.findById(id);
     }
 
-    @GetMapping("/lists/{id}")
+    @GetMapping("/lists/{listId}")
     public ResponseEntity<List<TaskDTO>> getTasksByList(@PathVariable Long listId) {
         List<TaskDTO> tasks = service.findAllByList(listId);
         return ResponseEntity.ok(tasks);
