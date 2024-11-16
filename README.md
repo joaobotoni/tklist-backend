@@ -1,4 +1,7 @@
-## Create Table with Flyway
+### Create Table with Flyway
+<img src="https://img.shields.io/badge/-Flyway%20Spring-333333?style=flat&logo=spring" alt="Flyway Spring">
+
+#
 ```sql
 
 CREATE TABLE tasks (
@@ -25,6 +28,9 @@ CREATE TABLE belong (
 );
 ```
 ### Inserting data into Postgres
+<img src="https://img.shields.io/badge/-PostgreSQL-333333?style=flat&logo=postgresql" alt="PostgreSQL">
+
+#
 
 ```sql
 INSERT INTO tasks (title, assignee, created_at, description, priority, due_date) VALUES 
@@ -56,9 +62,18 @@ INSERT INTO belong (task_id, list_id, position_task) VALUES
   (9, 3, 2),
   (10, 1, 4);
 ```
+
+### Class Diagram
+<img src="https://img.shields.io/badge/-UML-333333?style=flat&logo=uml" alt="UML">
+
+#
+
 <img src="https://github.com/user-attachments/assets/765ed3de-2137-4036-a9e6-82e18985ac84"/>
 
 ### Container with Docker
+<img src="https://img.shields.io/badge/-Docker-333333?style=flat&logo=docker" alt="Docker">
+
+#
 ```yml
 services:
   # ====================================================================================================================
