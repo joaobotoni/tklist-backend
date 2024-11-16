@@ -12,7 +12,7 @@ CREATE TABLE tasks (
 );
 
 CREATE TABLE task_list (
-    id SERIAL PRIMARY KEY,  -- Auto incremento também
+    id SERIAL PRIMARY KEY,  
     name VARCHAR(100) NOT NULL
 );
 
